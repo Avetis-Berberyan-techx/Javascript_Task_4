@@ -30,6 +30,12 @@
               <label class="full-name__label" for="last-name">Last Name</label>
             </div>
           </div>
+          <div class="error">
+            <div class="error__text">
+              <p class="error__text--alert-circle">!</p>
+              <p class="error__text--alert-text">this field is required</p>
+            </div>
+          </div>
         </div>
 
         <div class="address">
@@ -69,6 +75,12 @@
               >Postal / Zip Code</label
             >
           </div>
+          <div class="error">
+            <div class="error__text">
+              <p class="error__text--alert-circle">!</p>
+              <p class="error__text--alert-text">this field is required</p>
+            </div>
+          </div>
         </div>
 
         <div class="phone-number">
@@ -78,10 +90,22 @@
           <div class="phone-number__field">
             <input
               class="phone-number__input"
-              id="phone-number"
+              id="phone-number__input"
               type="tel"
               placeholder="(000) 000-0000"
             />
+            <div class="error">
+              <div class="error__text">
+                <p class="error__text--alert-circle">!</p>
+                <p class="error__text--alert-text">this field is required</p>
+              </div>
+            </div>
+          </div>
+          <div class="error">
+            <div class="error__text">
+              <p class="error__text--alert-circle">!</p>
+              <p class="error__text--alert-text">this field is required</p>
+            </div>
           </div>
         </div>
 
@@ -99,15 +123,22 @@
           </div>
         </div>
         <div class="hear">
-          <label class="hear__label" for="hear about"
-            >how did you hear about us?</label
-          >
+          <label class="hear__label" for="social-media">
+            <h2>how did you hear about us?</h2>
+          </label>
           <select class="hear__select" name="social media" id="social-media">
+            <option value="none">None</option>
             <option value="newspaper">Newspaper</option>
             <option value="internet">Internet</option>
             <option value="magazine">Magazine</option>
             <option value="other">Other</option>
           </select>
+          <div class="error">
+            <div class="error__text">
+              <p class="error__text--alert-circle">!</p>
+              <p class="error__text--alert-text">this field is required</p>
+            </div>
+          </div>
           <div class="hear__other">
             <label class="hear__other-label" for="">Other *</label>
             <input
@@ -116,12 +147,18 @@
               name="other"
               id="other"
             />
+            <div class="error">
+              <div class="error__text">
+                <p class="error__text--alert-circle">!</p>
+                <p class="error__text--alert-text">this field is required</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="feedback">
           <div class="feedback__field">
-            <label class="feedback__label" for="feedback-about"
-              >Feedback about us:</label
+            <label class="feedback__label" for="feedback-about">
+              <h2>Feedback about us:</h2></label
             >
             <textarea
               class="feedback__textarea"
@@ -133,7 +170,7 @@
 
           <div class="feedback__field">
             <label class="feedback__label" for="suggestions"
-              >Suggestions if any for further improvement:</label
+              ><h2>Suggestions if any for further improvement:</h2></label
             >
             <textarea
               class="feedback__textarea"
@@ -144,10 +181,80 @@
           </div>
         </div>
         <div class="recomend">
-          
+          <div class="recomend__section">
+            <h2 class="recomend__question">
+              Will you be willing to recommend us?
+            </h2>
+
+            <label class="recomend__option">
+              <input type="checkbox" value="0" class="form__checkbox" />
+              <span class="recomend__label-text">Yes</span>
+            </label>
+
+            <label class="recomend__option">
+              <input type="checkbox" value="1" class="form__checkbox" />
+              <span class="recomend__label-text">Maybe</span>
+            </label>
+
+            <label class="recomend__option">
+              <input type="checkbox" value="2" class="form__checkbox" />
+              <span class="recomend__label-text">No</span>
+            </label>
+          </div>
         </div>
-        <button class="form__submit" type="submit">Submit</button>
+        <div class="reference">
+          <p class="reference__subtitle">
+            Please give reference of any two people whom you feel:
+          </p>
+
+          <table class="table">
+            <thead class="table__head">
+              <tr class="table__row">
+                <th class="table__cell table__cell--index-left-top"></th>
+                <th class="table__cell table__cell-corner">
+                  <h4>Full Name</h4>
+                </th>
+                <th class="table__cell">Address</th>
+                <th class="table__cell table__cell-corner-right">
+                  Contact Number
+                </th>
+              </tr>
+            </thead>
+            <tbody class="table__body">
+              <tr class="table__row">
+                <td class="table__cell table__cell--index-1">1</td>
+                <td class="table__cell">
+                  <input type="text" name="" id="" />
+                </td>
+                <td class="table__cell">
+                  <input type="text" name="" id="" />
+                </td>
+                <td class="table__cell">
+                  <input type="text" name="" id="" />
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__cell table__cell--index-2">2</td>
+                <td class="table__cell"><input type="text" name="" id="" /></td>
+                <td class="table__cell"><input type="text" name="" id="" /></td>
+                <td class="table__cell table__cell--index-bottom-right">
+                  <input type="text" name="" id="" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <button id="submit" class="form__submit" type="button">Submit</button>
       </form>
     </main>
+    <div class="success">
+      <img
+        src="./icons/success.png"
+        class="success__image"
+        alt="success image"
+      />
+    </div>
+    <script src="index.js"></script>
   </body>
 </html>
