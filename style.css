@@ -1,22 +1,32 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
+  background: #fafafa;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   padding: 20px;
 }
 
 .header {
   background-color: #fff;
-  padding: 30px;
   border-radius: 12px 12px 0 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   margin: 0 21.4%;
+  padding: 30px;
 }
 
 .header__text {
@@ -26,16 +36,16 @@ body {
 }
 
 .wrapper {
+  display: block;
   margin: 0 auto;
   width: 57.1%;
-  display: block;
 }
 
 .form {
   background-color: #fff;
-  padding: 40px;
   border-radius: 0 0 12px 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 40px;
 }
 
 .full-name__wrapper {
@@ -47,40 +57,40 @@ body {
   width: 50%;
 }
 .error__text {
+  align-items: flex-start;
+  background-color: rgb(242, 58, 60);
+  border-radius: 5px;
   display: none;
   gap: 5px;
-  background-color: rgb(242, 58, 60);
-  width: fit-content;
   justify-content: flex-start;
-  align-items: flex-start;
   padding: 5px 15px;
-  border-radius: 5px;
+  width: fit-content;
 }
 .error__text--alert-text {
   color: #ffffff;
 }
 .error__text--alert-circle {
-  width: 15px;
-  height: 15px;
-  font-weight: bold;
-  font-size: 14px;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  text-align: center;
-  margin: 0;
-  color: rgb(242, 58, 60);
   background-color: #ffffff;
+  border-radius: 50%;
+  color: rgb(242, 58, 60);
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
+  height: 15px;
+  justify-content: center;
+  margin: 0;
+  text-align: center;
+  width: 15px;
 }
 
 .full-name,
 .address,
 .phone-number,
 .email {
+  border-bottom: 2px solid #f0f0f0;
   margin-bottom: 35px;
   padding-bottom: 35px;
-  border-bottom: 2px solid #f0f0f0;
 }
 
 .email {
@@ -114,49 +124,49 @@ body {
 
 .full-name__input,
 .address__input {
-  width: 100%;
-  padding: 14px 16px;
+  background-color: #fafafa;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   font-size: 16px;
+  padding: 14px 16px;
   transition: all 0.3s ease;
-  background-color: #fafafa;
+  width: 100%;
 }
 
 .phone-number__input,
 .email__input {
-  width: 50%;
-  padding: 14px 16px;
+  background-color: #fafafa;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   font-size: 16px;
+  padding: 14px 16px;
   transition: all 0.3s ease;
-  background-color: #fafafa;
+  width: 50%;
 }
 
 .full-name__input:focus,
 .address__input:focus,
 .phone-number__input:focus,
 .email__input:focus {
-  outline: none;
-  border-color: #667eea;
   background-color: #fff;
+  border-color: #667eea;
   box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  outline: none;
 }
 
 .full-name__label,
 .address__label {
-  display: block;
   color: rgb(87, 100, 126);
+  display: block;
   font-size: 13px;
-  margin-top: 6px;
   margin-left: 4px;
+  margin-top: 6px;
 }
 
 .address__row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 20px;
+  grid-template-columns: 1fr 1fr;
 }
 .address__field {
   margin-top: 20px;
@@ -175,20 +185,20 @@ body {
 
 /* Elements */
 .hear__label {
+  color: #333;
   font-size: 14px;
   font-weight: 500;
-  color: #333;
   margin-bottom: 4px;
 }
 
 .hear__select {
-  width: 50%;
-  padding: 14px 16px;
+  background-color: #fafafa;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   font-size: 16px;
+  padding: 14px 16px;
   transition: all 0.3s ease;
-  background-color: #fafafa;
+  width: 50%;
 }
 
 .hear__select:valid {
@@ -200,9 +210,9 @@ body {
 }
 
 .hear__select:focus {
-  outline: none;
   border-color: #007bff;
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  outline: none;
 }
 
 .hear__other {
@@ -213,19 +223,19 @@ body {
 }
 
 .hear__other-label {
+  color: #333;
   font-size: 14px;
   font-weight: 500;
-  color: #333;
 }
 
 .hear__other-input {
-  width: 50%;
-  padding: 14px 16px;
+  background-color: #fafafa;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   font-size: 16px;
+  padding: 14px 16px;
   transition: all 0.3s ease;
-  background-color: #fafafa;
+  width: 50%;
 }
 
 .hear__other-input:valid {
@@ -237,9 +247,9 @@ body {
 }
 
 .hear__other-input:focus {
-  outline: none;
   border-color: #007bff;
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  outline: none;
 }
 
 .hear__other-input::placeholder {
@@ -267,9 +277,9 @@ body {
 }
 
 .feedback__label {
+  color: rgb(44, 51, 69);
   font-size: 14px;
   font-weight: 400;
-  color: rgb(44, 51, 69);
   line-height: 1.5;
 }
 .feedback__label label {
@@ -277,17 +287,17 @@ body {
 }
 
 .feedback__textarea {
-  width: 100%;
-  padding: 12px;
-  font-size: 14px;
-  font-family: inherit;
-  color: #333;
   background-color: #fff;
   border: 1px solid #d1d5db;
   border-radius: 6px;
-  resize: vertical;
+  color: #333;
+  font-family: inherit;
+  font-size: 14px;
   min-height: 120px;
+  padding: 12px;
+  resize: vertical;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
 }
 
 .feedback__textarea:hover {
@@ -295,9 +305,9 @@ body {
 }
 
 .feedback__textarea:focus {
-  outline: none;
   border-color: #3b82f6;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  outline: none;
 }
 
 .feedback__textarea::placeholder {
@@ -329,8 +339,8 @@ body {
 }
 
 .recomend__option {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 8px;
 }
 
@@ -340,9 +350,9 @@ body {
 
 /* checkbox styling (optional, minimal) */
 .form__checkbox {
-  width: 16px;
-  height: 16px;
   cursor: pointer;
+  height: 16px;
+  width: 16px;
 }
 
 .reference {
@@ -358,8 +368,8 @@ body {
 /* TABLE BLOCK */
 
 .table {
-  width: 100%;
   border-spacing: 0;
+  width: 100%;
 }
 
 .table__head {
@@ -372,8 +382,8 @@ body {
 
 .table__cell {
   border: 1px solid #cfd8e3;
-  padding: 8px 10px;
   font-size: 14px;
+  padding: 8px 10px;
   text-align: left;
 }
 
@@ -390,65 +400,65 @@ body {
 }
 
 .table__cell--index {
-  width: 40px;
-  text-align: center;
-  font-weight: 500;
-  border-color: #cfd8e3;
   border-bottom: 1px solid #cfd8e3;
+  border-color: #cfd8e3;
+  font-weight: 500;
+  text-align: center;
+  width: 40px;
 }
 .table__cell--index-1 {
-  width: 40px;
-  text-align: center;
-  font-weight: 500;
-  border-color: #cfd8e3;
   border-bottom: 1px solid #cfd8e3;
+  border-color: #cfd8e3;
   border-top-left-radius: 15px;
+  font-weight: 500;
+  text-align: center;
+  width: 40px;
 }
 .table__cell--index-2 {
-  width: 40px;
-  text-align: center;
-  font-weight: 500;
-  border-color: #cfd8e3;
   border-bottom: 1px solid #cfd8e3;
   border-bottom-left-radius: 15px;
+  border-color: #cfd8e3;
+  font-weight: 500;
+  text-align: center;
+  width: 40px;
 }
 
 .table__cell--index-left-top {
-  width: 40px;
-  text-align: center;
-  font-weight: 500;
   background-color: #ffffff;
   border-color: #ffffff;
+  font-weight: 500;
+  text-align: center;
+  width: 40px;
 }
 .table__cell--index-bottom-right {
-  border-color: #cfd8e3;
   border-bottom: 1px solid #cfd8e3;
   border-bottom-right-radius: 15px;
+  border-color: #cfd8e3;
 }
 
 .table__cell input {
-  border: none;
   background-color: transparent;
+  border: none;
   width: 100%;
 }
 
 .form__submit {
   background-color: #04aa6d;
   border: none;
+  border-radius: 7px;
   color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 15px;
   padding: 10px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 7px;
-  margin-top: 15px;
 }
 
 .form__submit:hover {
-  transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  transform: translateY(-2px);
 }
 
 .form__submit:active {
@@ -456,10 +466,10 @@ body {
 }
 
 .success {
-  display: none;
-  justify-content: center;
   align-items: center;
+  display: none;
   flex-basis: 100%;
+  justify-content: center;
 }
 
 .success__image {
@@ -468,8 +478,8 @@ body {
 
 @media (max-width: 768px) {
   .header {
-    padding: 20px;
     border-radius: 8px 8px 0 0;
+    padding: 20px;
   }
 
   .header__text {
@@ -477,8 +487,8 @@ body {
   }
 
   .form {
-    padding: 25px;
     border-radius: 0 0 8px 8px;
+    padding: 25px;
   }
 
   .address__row {
