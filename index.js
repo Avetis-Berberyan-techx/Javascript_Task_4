@@ -1,15 +1,14 @@
 //header
 const headerBlock = document.querySelector('.header');
 
-// //main
+//main
 const mainBlock = document.querySelector('.wrapper');
 
 // Full Name
 const firstName = document.getElementById('first-name');
 const lastName = document.getElementById('last-name');
-const fullNameWrapper = document.getElementsByClassName('full-name')[0];
-const errorName = document.getElementsByClassName('error__text');
-console.log(errorName);
+const fullNameWrapper = document.querySelector('.full-name');
+const errorName = document.querySelectorAll('.error__text');
 
 // Address
 const streetAddress = document.getElementById('street_address');
@@ -17,17 +16,17 @@ const streetAddress2 = document.getElementById('street_address_2');
 const city = document.getElementById('city');
 const state = document.getElementById('state');
 const zipCode = document.getElementById('zip-code');
-const address = document.getElementsByClassName('address')[0];
+const address = document.querySelector('.address');
 
 // Phone & Email
 const phoneNumber = document.getElementById('phone-number__input');
-const phoneNumberWrapper = document.getElementsByClassName('phone-number')[0];
+const phoneNumberWrapper = document.querySelector('.phone-number');
 const email = document.getElementById('email');
 
 // Hear about us
 const socialMedia = document.getElementById('social-media');
-const socialMediaWrapper = document.getElementsByClassName('hear')[0];
-const other = document.getElementsByClassName('hear__other')[0];
+const socialMediaWrapper = document.querySelector('.hear');
+const other = document.querySelector('.hear__other');
 const otherInput = document.getElementById('other');
 let wantOther = false;
 
@@ -36,29 +35,32 @@ const feedbackAbout = document.getElementById('feedback-about');
 const suggestions = document.getElementById('suggestions');
 
 //checkboxes
-
 const checkboxes = document.querySelectorAll('.form__checkbox');
 
 // Submit button
 const submitBtn = document.getElementById('submit');
 
 // success message
-
-const successImage = document.getElementsByClassName('success')[0];
+const successImage = document.querySelector('.success');
 
 const inputChecker = (element) => {
-  if (element.value.trim() === '') {
-    element.style.border = '2px solid rgb(242, 58, 60)';
-  } else {
-    element.style.border = '2px solid #e0e0e0';
-  }
+  element.style.border =
+    element.value.trim() === ''
+      ? '2px solid rgb(242, 58, 60)'
+      : '2px solid #e0e0e0';
+};
+
+const setErrorStyle = (wrapper, errorIndex, show) => {
+  wrapper.style.backgroundColor = show ? 'rgb(255, 237, 237)' : '#fff';
+  wrapper.style.padding = show ? '15px' : '0px';
+  wrapper.style.borderRadius = show ? '15px' : '0px';
+  errorName[errorIndex].style.display = show ? 'flex' : 'none';
 };
 
 submitBtn.addEventListener('click', () => {
-  let isValid = true; // overall form validity
+  let isValid = true;
 
   //input Validation
-
   inputChecker(firstName);
   inputChecker(lastName);
   inputChecker(streetAddress);
@@ -69,84 +71,42 @@ submitBtn.addEventListener('click', () => {
   if (wantOther) {
     inputChecker(otherInput);
   }
-  if (socialMedia.value.trim() === 'none') {
-    socialMedia.style.border = '2px solid rgb(242, 58, 60)';
-    socialMediaWrapper.style.backgroundColor = 'rgb(255, 237, 237)';
-    socialMediaWrapper.style.padding = '15px';
-    socialMediaWrapper.style.borderRadius = '15px';
-    errorName[4].style.display = 'flex';
-    isValid = false;
-  } else {
-    socialMedia.style.border = '2px solid #e0e0e0';
-    socialMediaWrapper.style.backgroundColor = '#fff';
-    socialMediaWrapper.style.padding = '0px';
-    socialMediaWrapper.style.borderRadius = '0px';
-    errorName[4].style.display = 'none';
-  }
+
+  // Social Media validation
+  const socialMediaInvalid = socialMedia.value.trim() === 'none';
+  socialMedia.style.border = socialMediaInvalid
+    ? '2px solid rgb(242, 58, 60)'
+    : '2px solid #e0e0e0';
+  setErrorStyle(socialMediaWrapper, 4, socialMediaInvalid);
+  if (socialMediaInvalid) isValid = false;
 
   // Full Name validation
-  if (firstName.value.trim() === '' || lastName.value.trim() === '') {
-    isValid = false;
-    fullNameWrapper.style.backgroundColor = 'rgb(255, 237, 237)';
-    fullNameWrapper.style.padding = '15px';
-    fullNameWrapper.style.borderRadius = '15px';
-    errorName[0].style.display = 'flex';
-  } else {
-    fullNameWrapper.style.backgroundColor = '#fff';
-    fullNameWrapper.style.padding = '0px';
-    fullNameWrapper.style.borderRadius = '0px';
-    errorName[0].style.display = 'none';
-  }
+  const nameInvalid =
+    firstName.value.trim() === '' || lastName.value.trim() === '';
+  setErrorStyle(fullNameWrapper, 0, nameInvalid);
+  if (nameInvalid) isValid = false;
 
   //Street validation
-
-  if (
+  const addressInvalid =
     streetAddress.value.trim() === '' ||
     city.value.trim() === '' ||
     state.value.trim() === '' ||
-    zipCode.value.trim() === ''
-  ) {
-    address.style.backgroundColor = 'rgb(255, 237, 237)';
-    address.style.padding = '15px';
-    address.style.borderRadius = '15px';
-    errorName[1].style.display = 'flex';
-    isValid = false;
-  } else {
-    address.style.backgroundColor = '#fff';
-    address.style.padding = '0px';
-    address.style.borderRadius = '0px';
-    errorName[1].style.display = 'none';
-  }
+    zipCode.value.trim() === '';
+  setErrorStyle(address, 1, addressInvalid);
+  if (addressInvalid) isValid = false;
 
   //Phone Validation
+  const phoneInvalid = phoneNumber.value.trim() === '';
+  setErrorStyle(phoneNumberWrapper, 2, phoneInvalid);
+  phoneNumber.style.marginBottom = phoneInvalid ? '20px' : '0px';
+  if (phoneInvalid) isValid = false;
 
-  if (phoneNumber.value.trim() === '') {
-    isValid = false;
-    phoneNumberWrapper.style.backgroundColor = 'rgb(255, 237, 237)';
-    phoneNumberWrapper.style.padding = '15px';
-    phoneNumberWrapper.style.borderRadius = '15px';
-    phoneNumber.style.marginBottom = '20px';
-    errorName[2].style.display = 'flex';
-  } else {
-    phoneNumberWrapper.style.backgroundColor = '#fff';
-    phoneNumberWrapper.style.padding = '0px';
-    phoneNumberWrapper.style.borderRadius = '0px';
-    phoneNumber.style.marginBottom = '0px';
-    errorName[2].style.display = 'none';
-  }
-  if (wantOther && otherInput.value.trim() === '') {
-    isValid = false;
-    other.style.backgroundColor = 'rgb(255, 237, 237)';
-    other.style.padding = '15px';
-    other.style.borderRadius = '15px';
-    other.style.marginBottom = '20px';
-    errorName[5].style.display = 'flex';
-  } else {
-    other.style.backgroundColor = '#fff';
-    other.style.padding = '0px';
-    other.style.borderRadius = '0px';
-    other.style.marginBottom = '0px';
-    errorName[5].style.display = 'none';
+  // Other validation
+  if (wantOther) {
+    const otherInvalid = otherInput.value.trim() === '';
+    setErrorStyle(other, 5, otherInvalid);
+    other.style.marginBottom = otherInvalid ? '20px' : '0px';
+    if (otherInvalid) isValid = false;
   }
 
   if (isValid) {
@@ -161,7 +121,7 @@ submitBtn.addEventListener('click', () => {
       phoneNumber: phoneNumber.value,
       email: email.value,
       socialMedia: socialMedia.value,
-      other: other.value,
+      other: otherInput.value,
       feedbackAbout: feedbackAbout.value,
       suggestions: suggestions.value
     });
@@ -178,20 +138,14 @@ submitBtn.addEventListener('click', () => {
 });
 
 socialMedia.addEventListener('change', () => {
-  console.log('changing to', socialMedia.value);
-  if (socialMedia.value === 'other') {
-    wantOther = true;
-    other.style.display = 'flex';
-  } else {
-    wantOther = false;
-    other.style.display = 'none';
-  }
+  wantOther = socialMedia.value === 'other';
+  other.style.display = wantOther ? 'flex' : 'none';
 });
 
 document.addEventListener('change', (event) => {
-  checkboxes.forEach((checkbox) => {
-    if (checkbox !== event.target) {
-      checkbox.checked = false;
-    }
-  });
+  if (event.target.classList.contains('form__checkbox')) {
+    checkboxes.forEach((checkbox) => {
+      if (checkbox !== event.target) checkbox.checked = false;
+    });
+  }
 });
