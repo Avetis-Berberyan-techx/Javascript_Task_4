@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Inter';
-  src: url('../fonts/Inter-Regular.woff2') format('woff2');
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -9,14 +9,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 body {
   background: #fafafa;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
   padding: 20px;
 }
@@ -86,16 +86,19 @@ body {
 
 .full-name,
 .address,
-.phone-number,
 .email {
   border-bottom: 2px solid #f0f0f0;
   margin-bottom: 35px;
   padding-bottom: 35px;
 }
+.required_symbol{
+  color: red;
+}
 
-.email {
-  border-bottom: none;
-  padding-bottom: 0;
+.phone-number {
+  border-bottom: 0px solid #f0f0f0;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .full-name__header,
