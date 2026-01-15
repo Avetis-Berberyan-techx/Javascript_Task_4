@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Customer Details</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__text">Customer Details:</h1>
+    </header>
+    <main class="wrapper">
+      <form class="form" action="" method="post">
+        <div class="full-name">
+          <div class="full-name__header">
+            <h2 class="full-name__title">
+              Full Name <span class="required_symbol">*</span>
+            </h2>
+          </div>
+          <div class="full-name__wrapper">
+            <div class="full-name__item">
+              <label for="first-name"></label>
+              <input
+                class="full-name__input"
+                id="first-name"
+                type="text"
+                required
+              />
+              <br />
+              <label for="first-name" class="full-name__label"
+                >First Name</label
+              >
+            </div>
+            <div class="full-name__item">
+              <input
+                class="full-name__input"
+                id="last-name"
+                type="text"
+                required
+              />
+              <br />
+              <label class="full-name__label" for="last-name">Last Name</label>
+            </div>
+          </div>
+          <div class="error">
+            <div class="error__text">
+              <p class="error__text--alert-circle">!</p>
+              <p class="error__text--alert-text">this field is required</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="address">
+          <div class="address__header">
+            <h2 class="address__title">
+              Address <span class="required_symbol">*</span>
+            </h2>
+          </div>
+          <div class="address__field">
+            <input
+              class="address__input"
+              type="text"
+              id="street_address"
+              required
+            />
+            <br />
+            <label class="address__label" for="street_address"
+              >Street Address</label
+            >
+          </div>
+          <div class="address__field">
+            <input class="address__input" type="text" id="street_address_2" />
+            <br />
+            <label class="address__label" for="street_address_2"
+              >Street Address Line 2</label
+            >
+          </div>
+          <div class="address__row">
+            <div class="address__field address__field--half">
+              <input class="address__input" type="text" id="city" required />
+              <br />
+              <label class="address__label" for="city">City</label>
+            </div>
+            <div class="address__field address__field--half">
+              <input class="address__input" type="text" id="state" required />
+              <br />
+              <label class="address__label" for="state">State/Province</label>
+            </div>
+          </div>
+          <div class="address__field">
+            <input class="address__input" type="text" id="zip-code" required />
+            <br />
+            <label class="address__label" for="zip-code"
+              >Postal / Zip Code</label
+            >
+          </div>
+          <div class="error">
+            <div class="error__text">
+              <p class="error__text--alert-circle">!</p>
+              <p class="error__text--alert-text">this field is required</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-number">
+          <div class="phone-number__header">
+            <h2 class="phone-number__title">
+              Phone Number <span class="required_symbol">*</span>
+            </h2>
+          </div>
+          <div class="phone-number__field">
+            <input
+              class="phone-number__input"
+              id="phone-number__input"
+              type="tel"
+              placeholder="(000) 000-0000"
+              required
+            />
+          </div>
+          <div class="error">
+            <div class="error__text">
+              <p class="error__text--alert-circle">!</p>
+              <p class="error__text--alert-text">this field is required</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="email">
+          <div class="email__header">
+            <h2 class="email__title">E-mail</h2>
+          </div>
+          <div class="email__field">
+            <input
+              class="email__input"
+              id="email"
+              type="email"
+              placeholder="ex: email@yahoo.com"
+            />
+          </div>
+        </div>
+        <div class="hear">
+          <label class="hear__label" for="social-media">
+            <h2>
+              how did you hear about us? <span class="required_symbol">*</span>
+            </h2>
+          </label>
+          <select
+            class="hear__select"
+            name="social media"
+            id="social-media"
+            required
+          >
+            <option value="none">None</option>
+            <option value="newspaper">Newspaper</option>
+            <option value="internet">Internet</option>
+            <option value="magazine">Magazine</option>
+            <option value="other">Other</option>
+          </select>
+          <div class="error">
+            <div class="error__text">
+              <p class="error__text--alert-circle">!</p>
+              <p class="error__text--alert-text">this field is required</p>
+            </div>
+          </div>
+          <div class="hear__other">
+            <label class="hear__other-label" for="other">Other</label>
+            <input
+              class="hear__other-input"
+              type="text"
+              name="other"
+              id="other"
+            />
+            <div class="error">
+              <div class="error__text">
+                <p class="error__text--alert-circle">!</p>
+                <p class="error__text--alert-text">this field is required</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="feedback">
+          <div class="feedback__field">
+            <label class="feedback__label" for="feedback-about">
+              <h2>Feedback about us:</h2></label
+            >
+            <textarea
+              class="feedback__textarea"
+              id="feedback-about"
+              name="feedback-about"
+              rows="6"
+            ></textarea>
+          </div>
+
+          <div class="feedback__field">
+            <label class="feedback__label" for="suggestions"
+              ><h2>Suggestions if any for further improvement:</h2></label
+            >
+            <textarea
+              class="feedback__textarea"
+              id="suggestions"
+              name="suggestions"
+              rows="6"
+            ></textarea>
+          </div>
+        </div>
+        <div class="recomend">
+          <div class="recomend__section">
+            <h2 class="recomend__question">
+              Will you be willing to recommend us?
+            </h2>
+
+            <label class="recomend__option">
+              <input type="checkbox" value="0" class="form__checkbox" />
+              <span class="recomend__label-text">Yes</span>
+            </label>
+
+            <label class="recomend__option">
+              <input type="checkbox" value="1" class="form__checkbox" />
+              <span class="recomend__label-text">Maybe</span>
+            </label>
+
+            <label class="recomend__option">
+              <input type="checkbox" value="2" class="form__checkbox" />
+              <span class="recomend__label-text">No</span>
+            </label>
+          </div>
+        </div>
+        <div class="reference">
+          <p class="reference__subtitle">
+            Please give reference of any two people whom you feel:
+          </p>
+
+          <table class="table">
+            <thead class="table__head">
+              <tr class="table__row">
+                <th class="table__cell table__cell--index-left-top"></th>
+                <th class="table__cell table__cell-corner">
+                  <h4>Full Name</h4>
+                </th>
+                <th class="table__cell">Address</th>
+                <th class="table__cell table__cell-corner-right">
+                  Contact Number
+                </th>
+              </tr>
+            </thead>
+            <tbody class="table__body">
+              <tr class="table__row">
+                <td class="table__cell table__cell--index-1">1</td>
+                <td class="table__cell">
+                  <input type="text" name="" id="" />
+                </td>
+                <td class="table__cell">
+                  <input type="text" name="" id="" />
+                </td>
+                <td class="table__cell">
+                  <input type="text" name="" id="" />
+                </td>
+              </tr>
+              <tr class="table__row">
+                <td class="table__cell table__cell--index-2">2</td>
+                <td class="table__cell"><input type="text" name="" id="" /></td>
+                <td class="table__cell"><input type="text" name="" id="" /></td>
+                <td class="table__cell table__cell--index-bottom-right">
+                  <input type="text" name="" id="" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <button id="submit" class="form__submit" type="button">Submit</button>
+      </form>
+    </main>
+    <div class="success">
+      <img
+        src="./icons/success.png"
+        class="success__image"
+        alt="success image"
+      />
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
