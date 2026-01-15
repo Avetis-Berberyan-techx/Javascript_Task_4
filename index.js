@@ -1,5 +1,6 @@
-
-//elements
+// =====================
+// ELEMENTS
+// =====================
 const headerBlock = document.querySelector(".header");
 const mainBlock = document.querySelector(".wrapper");
 const successImage = document.querySelector(".success");
@@ -29,7 +30,6 @@ const socialMedia = document.getElementById("social-media");
 const feedbackAbout = document.getElementById("feedback-about");
 const suggestions = document.getElementById("suggestions");
 const submitBtn = document.getElementById("submit");
-const errorTexts = document.querySelectorAll(".error__text");
 const checkboxes = document.querySelectorAll(".form__checkbox");
 
 let wantOther = false;
@@ -45,11 +45,15 @@ const markInput = (el, invalid) => {
     : "2px solid #e0e0e0";
 };
 
-const setError = (wrapper, index, show) => {
+const setError = (wrapper, show) => {
   wrapper.style.backgroundColor = show ? "rgb(255,237,237)" : "#fff";
   wrapper.style.padding = show ? "15px" : "0";
   wrapper.style.borderRadius = show ? "15px" : "0";
-  errorTexts[index].style.display = show ? "flex" : "none";
+
+  const errorText = wrapper.querySelector(".error__text");
+  if (errorText) {
+    errorText.style.display = show ? "flex" : "none";
+  }
 };
 
 const validateInputs = (list) =>
@@ -65,9 +69,9 @@ const validateInputs = (list) =>
 submitBtn.addEventListener("click", () => {
   let isValid = true;
 
-  // Full name
+  // Full Name
   const nameInvalid = validateInputs([inputs.firstName, inputs.lastName]);
-  setError(wrappers.fullName, 0, nameInvalid);
+  setError(wrappers.fullName, nameInvalid);
   if (nameInvalid) isValid = false;
 
   // Address
@@ -77,30 +81,32 @@ submitBtn.addEventListener("click", () => {
     inputs.state,
     inputs.zip,
   ]);
-  setError(wrappers.address, 1, addressInvalid);
+  setError(wrappers.address, addressInvalid);
   if (addressInvalid) isValid = false;
 
   // Phone
   const phoneInvalid = validateInputs([inputs.phone]);
-  setError(wrappers.phone, 2, phoneInvalid);
+  setError(wrappers.phone, phoneInvalid);
   inputs.phone.style.marginBottom = phoneInvalid ? "20px" : "0";
   if (phoneInvalid) isValid = false;
 
   // Social Media
   const socialInvalid = socialMedia.value === "none";
   markInput(socialMedia, socialInvalid);
-  setError(wrappers.social, 4, socialInvalid);
+  setError(wrappers.social, socialInvalid);
   if (socialInvalid) isValid = false;
 
   // Other
   if (wantOther) {
     const otherInvalid = validateInputs([inputs.other]);
-    setError(wrappers.other, 5, otherInvalid);
+    setError(wrappers.other, otherInvalid);
     inputs.other.style.marginBottom = otherInvalid ? "20px" : "0";
     if (otherInvalid) isValid = false;
   }
 
+  // =====================
   // SUCCESS
+  // =====================
   if (isValid) {
     console.log("Form Data:", {
       firstName: inputs.firstName.value,
