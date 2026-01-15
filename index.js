@@ -4,7 +4,7 @@
 const headerBlock = document.querySelector(".header");
 const mainBlock = document.querySelector(".wrapper");
 const successImage = document.querySelector(".success");
-
+const form = document.querySelector(".form");
 const inputs = {
   firstName: document.getElementById("first-name"),
   lastName: document.getElementById("last-name"),
@@ -123,7 +123,6 @@ submitBtn.addEventListener("click", () => {
       feedbackAbout: feedbackAbout.value,
       suggestions: suggestions.value,
     });
-
     successImage.style.display = "flex";
     mainBlock.style.display = "none";
     headerBlock.style.display = "none";
@@ -132,6 +131,9 @@ submitBtn.addEventListener("click", () => {
       successImage.style.display = "none";
       mainBlock.style.display = "block";
       headerBlock.style.display = "block";
+      form.reset();
+      wantOther = false;
+      wrappers.other.style.display = "none";
     }, 3000);
   }
 });
